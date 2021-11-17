@@ -11,6 +11,7 @@
 </head>
 <body>
 	<c:import url="cabecalho.jsp" />
+	<h3><a href="mvc?servico=MostraEventoServico">Cadastrar evento</a></h3>
 	<table cellspacing="2" width="70%" align="center" font-size="24"> 
 	<thead align="left">
 		<tr bgcolor="#${ln.count % 2 == 0 ? 'cfcfc4' : 'ffffff'}"> 
@@ -22,8 +23,8 @@
 		</tr>
 	</thead> 
 	
-	<jsp:useBean id="dao" class="br.com.agenda.dao.EventoDao" /> 
-	<c:forEach var="evento" items="${dao.lista}" varStatus="ln" > 
+	<%-- <jsp:useBean id="dao" class="br.com.agenda.dao.EventoDao" />--%> 
+	<c:forEach var="evento" items="${eventos}" varStatus="ln" > 
 	<tr bgcolor="#${ln.count % 2 == 0 ? 'dcdcdc' : 'ffffff'}"> 
 		<td>${evento.titulo}</td> 
 		<td>${evento.descricao}</td> 
@@ -31,6 +32,7 @@
 		<td><fmt:formatDate value="${evento.data_criacao.time}" pattern="dd/MM/yyyy"/></td> 
 		<td>${evento.local}</td> 
 		<td> <a href="mvc?servico=RemoveEventoServico&id=${evento.id}">Remover</a> </td>
+		<td> <a href="mvc?servico=MostraEventoServico&id=${evento.id}">Alterar</a> </td>
 	</tr> 
 	</c:forEach> 
 	</table>
