@@ -63,7 +63,7 @@ public class EventoDao {
 	}// fim lista
 
 	public Evento busca(Integer id) {
-		String sql = "select * from agenda where id = ?";
+		String sql = "select * from evento where id = ?";
 		Evento evento = null;
 		try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 			stmt.setInt(1, id);
