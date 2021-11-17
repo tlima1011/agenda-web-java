@@ -2,5 +2,5 @@
 <c:url value="/imagens" var="imagens" />
 
 <img src="${imagens}/duke-java.png" width="80"/>
-<h2 align="center">Agenda-WEB (powered by ThiagoDEV)</h2>
+<h2>Agenda-WEB (powered by ThiagoDEV)</h2>
 <hr />

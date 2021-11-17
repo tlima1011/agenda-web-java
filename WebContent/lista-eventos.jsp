@@ -30,6 +30,7 @@
 		<td><fmt:formatDate value="${evento.data_evento.time}" pattern="dd/MM/yyyy"/></td>
 		<td><fmt:formatDate value="${evento.data_criacao.time}" pattern="dd/MM/yyyy"/></td> 
 		<td>${evento.local}</td> 
+		<td> <a href="mvc?servico=RemoveEventoServico&id=${evento.id}">Remover</a> </td>
 	</tr> 
 	</c:forEach> 
 	</table>
