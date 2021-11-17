@@ -33,10 +33,10 @@ public class CadastraEventoServlet extends HttpServlet {
 		Calendar data_evento = null;
 		Calendar data_criacao = null;
 		try {
-			Date date = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(request.getParameter("data_evento"));
+			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(request.getParameter("data_evento"));
 			data_evento = Calendar.getInstance();
 			data_evento.setTime(date);
-			date = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(request.getParameter("data_criacao"));
+			date = new SimpleDateFormat("dd/MM/yyyy").parse(request.getParameter("data_criacao"));
 			data_criacao = Calendar.getInstance();
 			data_criacao.setTime(date);
 		} catch (ParseException e) {
