@@ -1,4 +1,6 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ page import="java.util.*, br.com.agenda.dao.*, br.com.agenda.model.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="custom" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -21,18 +23,18 @@
 		</tr> 
 		<tr> 
 			<td>Descrição:</td>
-			<td>
-			<textarea name="descricao" rows="5" cols="23" value="${evento.descricao}" placeholder="Informe a descrição aqui"/>${evento.descricao}</textarea></td> 
+			<td><textarea name="descricao" rows="5" cols="23" placeholder="Informe a descrição aqui"/>${evento.descricao}</textarea></td> 
 		</tr> 
 		<tr> 
 			<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 			<fmt:formatDate value="${evento.data_evento.time}" pattern="dd/MM/yyyy" var="dataFmt"/>
 			<td>Data Evento:</td>
 			<td>
-				<custom:campoData id="data_evento" value="${dataFmt}"/>
+				<custom:campoData id="data_evento" value="${evento.data_evento.time}"/>
 			</td> 
 		</tr> 
 		<tr> 
+			<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 			<fmt:formatDate value="${evento.data_criacao.time}" pattern="dd/MM/yyyy" var="dataFmt"/>
 			<td>Data Criação:</td>
 			<td>
@@ -49,8 +51,11 @@
 		<br/> 
 			<input type="hidden" name="id" value="${evento.id}" />
 			<input type="hidden" name="servico" value="GravaEventoServico" />
-			<input type="submit" value="Salvar" onclick="alert('Produto salvo com sucesso!')"/> 
-			<input type="reset" value="Reset"/> 
+			<input type="submit" value="Salvar" onclick="alert('Agendamento salvo com sucesso!')"/> 
+			<input type="reset" value="Reset"/>
+			<a href="mvc?servico=ListaEventosServico"> 
+				<input type="button" value="Lista"/>
+			</a>
 		</form>
 </body>
 </html>

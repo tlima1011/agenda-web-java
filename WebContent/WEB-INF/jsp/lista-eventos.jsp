@@ -12,6 +12,7 @@
 <body>
 	<c:import url="cabecalho.jsp" />
 	<h3><a href="mvc?servico=MostraEventoServico">Cadastrar evento</a></h3>
+	<h2 align="center">Lista de Compromissos</h2>
 	<table cellspacing="2" width="70%" align="center" font-size="24"> 
 	<thead align="left">
 		<tr bgcolor="#${ln.count % 2 == 0 ? 'cfcfc4' : 'ffffff'}"> 
@@ -22,7 +23,6 @@
 			<th>Local</th>
 		</tr>
 	</thead> 
-	
 	<%-- <jsp:useBean id="dao" class="br.com.agenda.dao.EventoDao" />--%> 
 	<c:forEach var="evento" items="${eventos}" varStatus="ln" > 
 	<tr bgcolor="#${ln.count % 2 == 0 ? 'dcdcdc' : 'ffffff'}"> 

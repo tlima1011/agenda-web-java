@@ -10,20 +10,19 @@ import java.util.Calendar;
 import java.util.List;
 
 import br.com.agenda.model.Evento;
-import br.com.agenda.model.Login;
 
 public class EventoDao {
+	
+	private Connection connection;	
 
-	private Login login;
-
-	private Connection connection;
-
-	Login l = new Login();
-
+	public EventoDao(Connection connection) { 
+		this.connection = connection; 
+	}
+	
 	public EventoDao() {
 		this.connection = new ConnectionFactory().getConnection();
 	}
-
+	
 	public void adiciona(Evento evento) {
 		String sql = "insert into evento (titulo, descricao, data_evento, data_criacao, local) values (?,?,?,?,?)";
 		try (PreparedStatement stmt = connection.prepareStatement(sql)) {

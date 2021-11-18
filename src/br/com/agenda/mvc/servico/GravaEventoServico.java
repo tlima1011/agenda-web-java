@@ -1,5 +1,6 @@
 package br.com.agenda.mvc.servico;
 
+import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -16,6 +17,8 @@ public class GravaEventoServico implements Servico{
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		Connection connection = (Connection) request.getAttribute("conexao");
 		
 		String sId = request.getParameter("id"); 
 		String titulo = request.getParameter("titulo"); 
@@ -38,13 +41,12 @@ public class GravaEventoServico implements Servico{
 		Evento evento = new Evento(titulo, descricao, data_evento, data_criacao, local); 
 		//Gravar no BD com o DAO 
 		if (sId == null || sId.equals("")) { 
-			new EventoDao().adiciona(evento);
+			new EventoDao(connection).adiciona(evento);
 		}else { 
 			Integer id = Integer.parseInt(sId); 
 			evento.setId(id); 
-		new EventoDao().altera(evento); 
+		new EventoDao(connection).altera(evento); 
 		} //retorna para o serviço de listar 
 		return new ListaEventosServico().executa(request, response);
-		//return "mvc?servico=ListaImoveisServico";
 	}
 }
