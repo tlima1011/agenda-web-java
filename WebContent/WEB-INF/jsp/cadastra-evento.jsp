@@ -12,9 +12,11 @@
 <link href="css/jquery.css" rel="stylesheet"> 
 <script src="js/jquery.js"></script> 
 <script src="js/jquery-ui.js"></script>
+<link rel="shortcut icon" href="imagens/calendario.png" type="image/x-icon">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+	<c:import url="cabecalho.jsp" />
 	<h1 align="center">Cadastrar Evento</h1> <hr /> 
 	<form action="mvc" method="post" align="center"> 
 	<table align="center"> 
@@ -52,10 +54,10 @@
 		<br/> 
 			<input type="hidden" name="id" value="${evento.id}" />
 			<input type="hidden" name="servico" value="GravaEventoServico" />
-			<button type="submit" class="btn btn-success" onclick="alert('Agendamento salvo com sucesso!')">Salvar</button> 
-			<button type="reset" class="btn btn-secondary">Reiniciar</button>
+			<button type="submit" class="btn btn-primary" onclick="alert('Agendamento salvo com sucesso!')">Salvar</button> 
+			<button type="reset" class="btn btn-primary">Reiniciar</button>
 			<a href="mvc?servico=ListaEventosServico"> 
-				<input type="button" value="Lista"/>
+				<button type="button" class="btn btn-primary">Voltar</button>
 			</a>
 		</form>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
