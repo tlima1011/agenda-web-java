@@ -8,11 +8,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Eventos</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 	<c:import url="cabecalho.jsp" />
-	<h3><a href="mvc?servico=MostraEventoServico">Cadastrar evento</a></h3>
-	<h2 align="center">Lista de Compromissos</h2>
+	<a href="mvc?servico=MostraEventoServico">
+		<button type="button" class="btn btn-outline-secondary">Cadastrar evento</button>
+	</a>
+	<h2 align="center"><i>Lista de Compromissos</i></h2>
 	<table cellspacing="2" width="70%" align="center" font-size="24"> 
 	<thead align="left">
 		<tr bgcolor="#${ln.count % 2 == 0 ? 'cfcfc4' : 'ffffff'}"> 
