@@ -11,8 +11,7 @@ public class Evento {
 	private Calendar data_evento; 
 	private Calendar data_criacao; 
 	private String local; 
-	private Login login; 
-	
+	private Usuario usuario; 
 	
 	public Evento(String titulo, String descricao, Calendar data_evento, Calendar data_criacao, String local) {
 		this.titulo = titulo;
@@ -28,7 +27,7 @@ public class Evento {
 		this.descricao = descricao;
 		this.data_evento = data_evento;
 		this.data_criacao = data_criacao;
-		this.login = login;
+		this.usuario = usuario;
 		this.local = local; 
 	}
 	
@@ -81,8 +80,8 @@ public class Evento {
 		this.local = local;
 	}
 
-	public Login getLogin() {
-		return login;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 		
 }

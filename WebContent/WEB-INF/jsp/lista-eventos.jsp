@@ -16,9 +16,9 @@
 <body>
 	<c:import url="cabecalho.jsp" />
 	<div class="botao">
-	<a href="mvc?servico=MostraEventoServico">
-		<button type="button" class="btn btn-outline-secondary">Cadastrar evento</button>
-	</a>
+		<a href="mvc?servico=MostraEventoServico">
+			<button type="button" class="btn btn-outline-secondary">Cadastrar evento</button>
+		</a>
 	</div>
 	<h2 align="center"><i>Lista de Compromissos</i></h2>
 	<table cellspacing="2" width="70%" align="center" font-size="24"> 
